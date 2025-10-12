@@ -6,14 +6,101 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Title</title>
+    <title>Kate VR - The New Start of VR Locomotion</title>
     <link
       rel="stylesheet"
       href="./styles/main.scss"
     />
   </head>
   <body>
-    <h1>Hello Mate Academy</h1>
-    <script src="scripts/main.js"></script>
+    <header class="header">
+      <nav class="header__nav">
+        <a
+          href="/"
+          class="header__logo"
+        >
+          <img
+            src="./images/icons/logo.png"
+            alt="logo"
+          />
+        </a>
+        <div class="header__language">
+          <ul>
+            <li>
+              <a
+                href="#"
+                class="header__language-eng is-active"
+              >
+                EN
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="header__language-pl"
+              >
+                PL
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="header__menu">
+          <ul class="header__menu-items">
+            <li class="header__menu-item"><a href="#about">About</a></li>
+            <li class="header__menu-item"><a href="#tech">Tech</a></li>
+            <li class="header__menu-item"><a href="#benefits">Benefits</a></li>
+            <li class="header__menu-item"><a href="#contact">Contact</a></li>
+          </ul>
+          <div class="header__actions">
+            <button class="header__menu-btn">Buy Now</button>
+            <button
+              class="header__menu-iconmenu"
+              aria-label="Open menu"
+            >
+              <img
+                src="./images/icons/menu.png"
+                alt="Open menu"
+              />
+            </button>
+          </div>
+        </div>
+      </nav>
+      <div class="header__content">
+        <h1 class="header__content-title">
+          THE NEW START OF
+          <span class="color">VR LOCOMOTION</span>
+        </h1>
+        <div class="header__content-text">
+          Discover the most comprehensive VR Locomotion system, and unlock
+          infinite motion in any games on any platforms!
+        </div>
+        <div class="header__content-text--price">1200$</div>
+        <button class="header__content-play">
+          <div class="header__content-play--icon"></div>
+          <div class="header__content-play--text">Play Video</div>
+        </button>
+      </div>
+      <button class="header__btn">Buy Now</button>
+      <div class="header__navbar">
+        <div class="navbar__container--1">
+          <ul>
+            <li><a href="#about">FAQ</a></li>
+            <li><a href="#tech">Help</a></li>
+          </ul>
+        </div>
+        <div class="navbar__container--2">
+          <ul>
+            <li><a href="#about">More</a></li>
+            <li><a href="#tech">Help</a></li>
+          </ul>
+        </div>
+        <div class="navbar__container--3">
+          <ul>
+            <li><a href="#about">Previous</a></li>
+            <li><a href="#tech">Next</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
   </body>
 </html>
