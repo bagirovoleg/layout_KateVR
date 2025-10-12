@@ -35,14 +35,14 @@
       <nav class="header__nav">
         <a
           href="/"
-          class="header__logo"
+          class="header__nav-logo"
         >
           <img
-            src="./images/icons/logo.png"
+            src="./images/icons/header/logo.png"
             alt="logo"
           />
         </a>
-        <div class="header__language">
+        <div class="header__nav-language">
           <ul>
             <li>
               <a
@@ -64,19 +64,24 @@
         </div>
         <div class="header__menu">
           <ul class="header__menu-items">
-            <li class="header__menu-item"><a href="#about">About</a></li>
-            <li class="header__menu-item"><a href="#tech">Tech</a></li>
-            <li class="header__menu-item"><a href="#benefits">Benefits</a></li>
-            <li class="header__menu-item"><a href="#contact">Contact</a></li>
+            <li class="header__menu-items--item"><a href="#about">About</a></li>
+            <li class="header__menu-items--item"><a href="#tech">Tech</a></li>
+            <li class="header__menu-items--item">
+              <a href="#benefits">Benefits</a>
+            </li>
+            <li class="header__menu-items--item">
+              <a href="#contact">Contact</a>
+            </li>
           </ul>
           <div class="header__actions">
-            <button class="header__menu-btn">Buy Now</button>
+            <button class="header__menu-btn"><a href="#buy">Buy Now</a></button>
             <button
               class="header__menu-iconmenu"
               aria-label="Open menu"
             >
               <img
-                src="./images/icons/menu.png"
+                src="./images/icons/header/menu.png"
+                id="menuOpen"
                 alt="Open menu"
               />
             </button>
@@ -84,6 +89,7 @@
         </div>
       </nav>
       <div class="header__content">
+        <div class="header__content-image"></div>
         <h1 class="header__content-title">
           THE NEW START OF
           <span class="color">VR LOCOMOTION</span>
@@ -93,12 +99,12 @@
           infinite motion in any games on any platforms!
         </div>
         <div class="header__content-text--price">1200$</div>
-        <button class="header__content-play">
-          <div class="header__content-play--icon"></div>
+        <div class="header__content-play">
+          <button class="header__content-play--icon"></button>
           <div class="header__content-play--text">Play Video</div>
-        </button>
+        </div>
       </div>
-      <button class="header__btn">Buy Now</button>
+      <button class="header__btn"><a href="#buy">Buy Now</a></button>
       <div class="header__navbar">
         <div class="navbar__container--1">
           <ul>

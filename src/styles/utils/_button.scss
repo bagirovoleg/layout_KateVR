@@ -15,7 +15,7 @@
 }
 
 @mixin primery-btn-hover() {
-  background-color: vars.$black-900;
+  // background-color: vars.$black-900;
 
   // border: 1px solid vars.$gray-900;
   // color: vars.$gray-900;
@@ -51,9 +51,9 @@
   width: 100%;
   height: 60px;
 
-  @include fonts.button;
+  @include fonts.buttons-links;
 
-  background-color: vars.$black-600;
+  background-color: vars.$contrast;
   color: vars.$white;
 
   &:hover {
@@ -66,5 +66,10 @@
     @include button-passed;
 
     cursor: pointer;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
   }
 }

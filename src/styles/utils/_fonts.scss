@@ -32,6 +32,13 @@
   font-family: vars.$font-family;
 }
 
+@mixin price {
+  font-weight: 500;
+  font-size: 18px;
+  color: vars.$white;
+  font-family: vars.$font-family;
+}
+
 @mixin headline-3 {
   font-weight: 900;
   font-size: 16px;

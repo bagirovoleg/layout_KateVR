@@ -13,10 +13,10 @@
 @mixin grid-320() {
   display: grid;
 
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   column-gap: 20px;
 
-  padding: 0 30px;
+  padding: 0 20px;
 
   @include grid-768 {
     grid-template-columns: repeat(8, 1fr);

@@ -1,0 +1,179 @@
+@use '../utils/button';
+@use '../utils/fonts';
+@use '../utils/media';
+@use '../utils/vars';
+
+.header {
+  @include media.grid-320;
+
+  grid-template-rows: 44px auto;
+
+  background: vars.$bg;
+
+  &__nav {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-logo {
+      img {
+        height: 12px;
+      }
+    }
+
+    &-language {
+      display: none;
+    }
+  }
+
+  &__menu {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    display: flex;
+
+    &-items {
+      display: none;
+    }
+
+    &-btn {
+      display: none;
+    }
+
+    &-iconmenu {
+      background-color: transparent;
+
+      border: none;
+
+      img {
+        height: 9px;
+        width: 20px;
+      }
+    }
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    display: flex;
+    flex-direction: column;
+
+    &-image {
+      grid-column: 1 / -1;
+
+      // --- Technika "Full Bleed" (rozciągnięcie na całą szerokość ekranu) ---
+      position: relative;
+      right: 50%;
+      left: 50%;
+
+      // Ustawia szerokość elementu na 100% szerokości okna przeglądarki.
+      width: 100vw;
+      min-height: 195px;
+      margin-right: -50vw;
+      margin-left: -50vw;
+
+      background-image: url('/src/images/header/header-mob.png');
+
+      // Skaluje obrazek tak, aby był w całości widoczny w kontenerze, zachowując proporcje.
+      // Obrazek nie zostanie przycięty.
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &-title {
+      @include fonts.headline-1-mobile;
+
+      .color {
+        color: vars.$contrast;
+      }
+    }
+
+    &-text {
+      margin: 17px 0 8px;
+
+      @include fonts.buttons-links;
+
+      color: vars.$text;
+
+      &--price {
+        text-align: center;
+        margin-bottom: 16px;
+
+        @include fonts.price;
+      }
+    }
+
+    &-play {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+
+      &--icon {
+        background-color: transparent;
+
+        border: none;
+
+        width: 190px;
+        height: 66px;
+
+        background-image: url('/src/images/icons/header/play.png');
+
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      &--text {
+        position: absolute;
+        margin-left: 96px;
+
+        @include fonts.buttons-links;
+      }
+    }
+  }
+
+  &__btn {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+
+    @include button.button;
+
+    margin-top: 23px;
+  }
+
+  &__navbar {
+    grid-column: 1 / -1;
+    display: none;
+  }
+}
+
+// .header {
+//   &__nav {
+//   }
+
+//   &__logo {
+//   }
+
+//   &__language {
+//     ul {
+//     }
+//     li {
+//     }
+//   }
+
+//   &__menu {
+//     &-items {
+//       &--item {
+//       }
+//     }
+
+//     &-btn {
+//     }
+//     &-iconmenu {
+//     }
+//   }
+
+//   &__actions {
+//   }
+// }
