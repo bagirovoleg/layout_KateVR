@@ -4,8 +4,8 @@
   }
 }
 
-@mixin grid-1440() {
-  @media (min-width: 1440px) {
+@mixin grid-1920() {
+  @media (min-width: 1920px) {
     @content;
   }
 }
@@ -25,7 +25,7 @@
     padding: 0 34px;
   }
 
-  @include grid-1440 {
+  @include grid-1920 {
     grid-template-columns: repeat(12, 1fr);
     column-gap: 30px;
 

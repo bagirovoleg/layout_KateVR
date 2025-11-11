@@ -10,6 +10,15 @@
 
   background: vars.$bg;
 
+  @include media.grid-768 {
+    grid-template-rows: 74px auto;
+  }
+
+  @include media.grid-1920 {
+    grid-template-rows: 144px auto;
+  }
+
+  // NAV-BAR MOBILE-TABLET-DESKTOP
   &__nav {
     grid-column: 1 / -1;
     grid-row: 1 / 2;
@@ -25,6 +34,22 @@
 
     &-language {
       display: none;
+    }
+
+    @include media.grid-768 {
+      &-logo {
+        img {
+          height: 14px;
+        }
+      }
+    }
+
+    @include media.grid-1920 {
+      &-language {
+        display: block;
+
+        margin-right: auto;
+      }
     }
   }
 
@@ -49,6 +74,35 @@
       img {
         height: 9px;
         width: 20px;
+      }
+    }
+
+    @include media.grid-1920 {
+      &-items {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        a {
+          margin: 0 36px;
+
+          @include fonts.buttons-links;
+
+          color: vars.$white;
+        }
+      }
+
+      &-btn {
+        display: block;
+
+        @include button.button;
+
+        height: 48px;
+        width: 200px;
+      }
+
+      &-iconmenu {
+        display: none;
       }
     }
   }
@@ -87,6 +141,7 @@
 
       .color {
         color: vars.$contrast;
+        font-weight: 400;
       }
     }
 
@@ -147,33 +202,3 @@
     display: none;
   }
 }
-
-// .header {
-//   &__nav {
-//   }
-
-//   &__logo {
-//   }
-
-//   &__language {
-//     ul {
-//     }
-//     li {
-//     }
-//   }
-
-//   &__menu {
-//     &-items {
-//       &--item {
-//       }
-//     }
-
-//     &-btn {
-//     }
-//     &-iconmenu {
-//     }
-//   }
-
-//   &__actions {
-//   }
-// }
