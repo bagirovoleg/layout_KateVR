@@ -1,8 +1,16 @@
 @use '../utils/vars';
 
-@mixin headline-1 {
+@mixin headline-1280 {
   font-weight: 900;
   font-size: 46px;
+  line-height: 130%;
+  color: vars.$white;
+  font-family: vars.$font-family;
+}
+
+@mixin headline-1920 {
+  font-weight: 900;
+  font-size: 54px;
   line-height: 130%;
   color: vars.$white;
   font-family: vars.$font-family;

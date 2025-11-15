@@ -4,6 +4,12 @@
   }
 }
 
+@mixin grid-1280() {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
 @mixin grid-1920() {
   @media (min-width: 1920px) {
     @content;
@@ -19,14 +25,21 @@
   padding: 0 20px;
 
   @include grid-768 {
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     column-gap: 20px;
 
     padding: 0 34px;
   }
 
-  @include grid-1920 {
+  @include grid-1280 {
     grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px;
+
+    padding: 0 110px;
+  }
+
+  @include grid-1920 {
+    grid-template-columns: repeat(16, 1fr);
     column-gap: 30px;
 
     padding: 0 125px;
