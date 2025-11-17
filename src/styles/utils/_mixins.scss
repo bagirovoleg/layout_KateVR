@@ -10,10 +10,17 @@
   clip-path: inset(50%);
 }
 
-@mixin hover-underline {
+@mixin hover-underline() {
   position: relative;
 
-  padding-top: 10px;
+  transition:
+    color 300ms,
+    transform 300ms ease-in-out;
+
+  &:hover {
+    color: vars.$contrast;
+    transform: translateY(-4px) scale(1.01);
+  }
 
   &::after {
     content: '';
@@ -22,7 +29,7 @@
     right: 0;
     bottom: -10px;
     height: 2px;
-    color: vars.$green-900;
+    background-color: vars.$contrast;
     opacity: 0;
     transition: opacity 300ms;
   }
@@ -30,4 +37,6 @@
   &:hover::after {
     opacity: 1;
   }
+
+  cursor: pointer;
 }

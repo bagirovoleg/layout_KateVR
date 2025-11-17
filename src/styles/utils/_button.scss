@@ -3,8 +3,8 @@
 
 @mixin hover() {
   // background-color: vars.$black-900;
-  // border: 1px solid vars.$gray-900;
-  // color: vars.$gray-900;
+  // border: 1px solid vars.$contrast;
+  color: vars.$contrast;
 
   transition:
     background-color 300ms,
@@ -14,11 +14,11 @@
   cursor: pointer;
 }
 
-@mixin primery-btn-hover() {
-  // background-color: vars.$black-900;
+@mixin hover-button() {
+  background-color: vars.$white;
 
-  // border: 1px solid vars.$gray-900;
-  // color: vars.$gray-900;
+  border: 1px solid vars.$contrast;
+  color: vars.$contrast;
 
   transition:
     background-color 300ms,
@@ -58,7 +58,7 @@
   color: vars.$white;
 
   &:hover {
-    @include primery-btn-hover;
+    @include hover-button;
 
     cursor: pointer;
   }

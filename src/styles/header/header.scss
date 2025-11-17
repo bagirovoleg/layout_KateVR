@@ -2,6 +2,7 @@
 @use '../utils/fonts';
 @use '../utils/media';
 @use '../utils/vars';
+@use '../utils/mixins';
 
 .header {
   @include media.grid-320;
@@ -108,6 +109,12 @@
         height: 9px;
         width: 20px;
       }
+
+      &:hover {
+        cursor: pointer;
+
+        @include button.hover;
+      }
     }
 
     @include media.grid-1280 {
@@ -116,23 +123,43 @@
         align-items: center;
         justify-content: space-between;
 
-        a {
-          margin: 0 36px;
+        position: relative;
+        z-index: 10;
 
-          @include fonts.buttons-links;
+        &--item {
+          a {
+            margin: 0 36px;
 
-          color: vars.$white;
-          text-decoration: none;
+            @include fonts.buttons-links;
+
+            color: vars.$white;
+            text-decoration: none;
+
+            &:hover {
+              cursor: pointer;
+
+              @include mixins.hover-underline;
+            }
+          }
         }
       }
 
       &-btn {
         display: block;
 
+        position: relative;
+        z-index: 10;
+
         @include button.button;
 
         height: 48px;
         width: 200px;
+
+        &:hover {
+          cursor: pointer;
+
+          @include button.hover-button;
+        }
       }
 
       &-iconmenu {
@@ -376,6 +403,9 @@
         color: vars.$white;
         text-decoration: none;
 
+        position: relative;
+        z-index: 10;
+
         &.color {
           color: vars.$contrast;
           font-weight: 400;
@@ -396,6 +426,12 @@
             background-size: contain;
             background-repeat: no-repeat;
           }
+        }
+
+        &:hover:not(.color) {
+          cursor: pointer;
+
+          @include mixins.hover-underline;
         }
       }
 
