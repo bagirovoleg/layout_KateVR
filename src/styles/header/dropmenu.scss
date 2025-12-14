@@ -8,6 +8,7 @@
   @include media.grid-320;
 
   grid-column: 1 / -1;
+  grid-template-columns: 97px auto;
 
   z-index: 1000;
 
@@ -36,7 +37,7 @@
 
   &__close {
     grid-column: 1 / -1;
-    grid-row: 1 / -1;
+    grid-row: 1 / 2;
 
     justify-self: end;
 
@@ -53,36 +54,16 @@
 
   &__menu {
     grid-column: 1 / -1;
-    grid-row: 1 / -1;
-
-    //   margin-top: 50px;
-    // padding-left: 150px;
+    grid-row: 2 / 3;
 
     &-item {
-      width: 100%;
-
       box-sizing: border-box;
-
-      //     padding: 10px 0;
-
-      //     &:first-of-type {
-      //       margin-top: 45px;
-      //     }
-
-      width: 100vw;
-      position: relative;
-      left: 50%;
-      right: 50%;
-      margin-left: -50vw;
-      margin-right: -50vw;
 
       a {
         display: flex;
         align-items: center;
 
         text-align: left;
-
-        padding-left: 22px;
 
         @include fonts.headline-2-mobile;
 
@@ -96,10 +77,6 @@
           background-color: vars.$menu-bg;
           color: vars.$contrast;
         }
-      }
-
-      &:first-of-type {
-        margin-top: 75px;
       }
     }
   }
