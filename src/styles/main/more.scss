@@ -1,0 +1,140 @@
+@use '../utils/fonts';
+@use '../utils/media';
+@use '../utils/vars';
+@use '../utils/mixins';
+
+.more {
+  @include media.grid-320;
+
+  background-color: vars.$black;
+
+  &__title {
+    grid-column: 1 / -1;
+
+    margin: 33px 0 12px;
+
+    @include fonts.headline-2-mobile;
+
+    @include media.grid-768 {
+      margin: 70px 0 12px;
+    }
+
+    @include media.grid-1280 {
+      &__title {
+        margin: 100px 0 16px;
+
+        @include fonts.headline-2;
+      }
+    }
+
+    @include media.grid-1920 {
+      &__title {
+        margin: 158px 0 16px;
+      }
+    }
+
+    &--color {
+      color: vars.$contrast;
+      font-weight: 400;
+    }
+  }
+
+  &__subtitle {
+    grid-column: 1 / -1;
+
+    margin-bottom: 30px;
+
+    @include fonts.text-3-mobile;
+
+    color: vars.$contrast;
+
+    @include media.grid-768 {
+      margin-bottom: 37px;
+    }
+
+    @include media.grid-1280 {
+      margin-bottom: 83px;
+
+      @include fonts.text-2;
+    }
+
+    @include media.grid-1920 {
+      margin-bottom: 70px;
+    }
+  }
+
+  @include media.grid-768 {
+    text-align: center;
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+
+    margin-bottom: 50px;
+
+    @include media.grid-768 {
+      display: grid;
+      gap: 20px 40px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media.grid-1280 {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0 30px;
+    }
+  }
+
+  &__card {
+    &-image {
+      display: none;
+    }
+
+    &-title {
+      margin: 20px 0 11px;
+
+      @include fonts.headline-3;
+    }
+
+    &:first-child &-title {
+      margin-top: 0;
+    }
+
+    &-text {
+      @include fonts.text-1;
+
+      color: vars.$text;
+    }
+  }
+
+  @include media.grid-768 {
+    &__card {
+      // &:nth-child(1) &-title,
+      // &:nth-child(2) &-title {
+      //   margin-top: 0;
+      // }
+
+      &-image {
+        display: block;
+
+        margin: 0 auto;
+        padding: 0;
+      }
+
+      &-title {
+        margin: 22px 0 11px;
+      }
+
+      &:first-child &-title {
+        margin-top: 22px;
+      }
+    }
+
+    @include media.grid-1280 {
+      &__card {
+        &-title {
+          margin: 34px 0 20px;
+        }
+      }
+    }
+  }
+}
