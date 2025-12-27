@@ -6,6 +6,15 @@
 .more {
   @include media.grid-320;
 
+  // @include media.grid-768 {
+  // }
+
+  // @include media.grid-1280 {
+  // }
+
+  // @include media.grid-1920 {
+  // }
+
   background-color: vars.$black;
 
   &__title {
@@ -20,17 +29,13 @@
     }
 
     @include media.grid-1280 {
-      &__title {
-        margin: 100px 0 16px;
+      margin: 100px 0 16px;
 
-        @include fonts.headline-2;
-      }
+      @include fonts.headline-2;
     }
 
     @include media.grid-1920 {
-      &__title {
-        margin: 158px 0 16px;
-      }
+      margin: 158px 0 16px;
     }
 
     &--color {
@@ -76,64 +81,64 @@
       display: grid;
       gap: 20px 40px;
       grid-template-columns: repeat(2, 1fr);
+
+      margin-bottom: 70px;
     }
 
     @include media.grid-1280 {
       grid-template-columns: repeat(4, 1fr);
       gap: 0 30px;
+
+      margin-bottom: 100px;
     }
   }
 
   &__card {
     &-image {
       display: none;
+
+      @include media.grid-768 {
+        display: block;
+
+        margin: 0 auto;
+        padding: 0;
+      }
     }
 
     &-title {
       margin: 20px 0 11px;
 
       @include fonts.headline-3;
-    }
 
-    &:first-child &-title {
-      margin-top: 0;
+      @include media.grid-768 {
+        margin: 32px 0 21px;
+
+        &:first-child &-title {
+          margin-top: 22px;
+        }
+      }
+
+      @include media.grid-1280 {
+        margin: 34px 0 20px;
+      }
     }
 
     &-text {
       @include fonts.text-1;
 
       color: vars.$text;
-    }
-  }
 
-  @include media.grid-768 {
-    &__card {
-      // &:nth-child(1) &-title,
-      // &:nth-child(2) &-title {
-      //   margin-top: 0;
-      // }
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
 
-      &-image {
+      @include media.grid-768 {
+        @include fonts.text-1;
+
+        color: vars.$text;
+
         display: block;
-
-        margin: 0 auto;
-        padding: 0;
-      }
-
-      &-title {
-        margin: 22px 0 11px;
-      }
-
-      &:first-child &-title {
-        margin-top: 22px;
-      }
-    }
-
-    @include media.grid-1280 {
-      &__card {
-        &-title {
-          margin: 34px 0 20px;
-        }
       }
     }
   }
