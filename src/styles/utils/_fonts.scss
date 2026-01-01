@@ -1,5 +1,15 @@
 @use '../utils/vars';
 
+@mixin font($size, $weight, $lh, $color: null) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $lh;
+
+  @if $color {
+    color: $color;
+  }
+}
+
 @mixin headline-1280 {
   font-weight: 900;
   font-size: 46px;

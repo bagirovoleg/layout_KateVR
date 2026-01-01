@@ -170,7 +170,7 @@
       </nav>
     </header>
     <main class="main">
-      <div class="more">
+      <section class="more">
         <h2 class="more__title">
           MORE THAN
           <span class="more__title--color">GAMING!</span>
@@ -232,8 +232,158 @@
             </div>
           </div>
         </div>
-      </div>
+      </section>
+      <section class="about">
+        <div class="about__product">
+          <h2 class="about__product-title">
+            ABOUT
+            <span class="about__product-title--color">PRODUCT</span>
+          </h2>
+          <div class="about__slideshow-container">
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 5</div>
+              <picture class="picture">
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./images/main/about/img-01-tab.png"
+                />
+                <img
+                  src="./images/main/about/img-01-mob.png"
+                  alt="About Product Slide 1"
+                />
+              </picture>
+            </div>
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 5</div>
+              <picture class="picture">
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./images/main/about/img-02-tab.png"
+                />
+                <img
+                  src="./images/main/about/img-02-mob.png"
+                  alt="About Product Slide 1"
+                />
+              </picture>
+            </div>
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 5</div>
+              <picture class="picture">
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./images/main/about/img-03-tab.png"
+                />
+                <img
+                  src="./images/main/about/img-03-mob.png"
+                  alt="About Product Slide 1"
+                />
+              </picture>
+            </div>
+            <div class="mySlides fade">
+              <div class="numbertext">4 / 5</div>
+              <picture class="picture">
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./images/main/about/img-04-tab.png"
+                />
+                <img
+                  src="./images/main/about/img-04-mob.png"
+                  alt="About Product Slide 1"
+                />
+              </picture>
+            </div>
+            <div class="mySlides fade">
+              <div class="numbertext">5 / 5</div>
+              <picture class="picture">
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./images/main/about/img-05-tab.png"
+                />
+                <img
+                  src="./images/main/about/img-05-mob.png"
+                  alt="About Product Slide 1"
+                />
+              </picture>
+            </div>
+            <div class="dots">
+              <span
+                class="dot"
+                onclick="currentSlide(1)"
+              ></span>
+              <span
+                class="dot"
+                onclick="currentSlide(2)"
+              ></span>
+              <span
+                class="dot"
+                onclick="currentSlide(3)"
+              ></span>
+              <span
+                class="dot"
+                onclick="currentSlide(4)"
+              ></span>
+              <span
+                class="dot"
+                onclick="currentSlide(5)"
+              ></span>
+            </div>
+            <div class="nextbtn">
+              <button
+                class="prev"
+                onclick="plusSlides(-1)"
+              >
+                Previous
+              </button>
+              <button
+                class="next"
+                onclick="plusSlides(1)"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+          <div class="about__product-text">
+            KAT loco is a foot-based VR locomotion system that gives complete
+            physical control over lower-body actions, allowing you to freely
+            walk, run, and carry out just any other movement in virtual reality.
+          </div>
+          <div class="header__content-play">
+            <button class="header__content-play--icon"></button>
+            <div class="header__content-play--text">Play Video</div>
+          </div>
+        </div>
+        <div class="about__hello">
+          <p class="about__hello-title--sub">Hello,</p>
+          <h2 class="about__hello-title">
+            NICE TO MEET
+            <span class="about__hello-title--color">YOU!</span>
+          </h2>
+          <div class="about__hello-text">
+            KAT VR is an independent company dedicated to the research,
+            development, and sales of VR Locomotion products and solutions.
+            Founded in 2013, we have quickly grown to become one of the world’s
+            leading professional suppliers of VR games’ & simulations’ equipment
+          </div>
+          <div class="about__hello-aboutimg">
+            <picture>
+              <source
+                media="(min-width: 1280px)"
+                srcset="./images/main/about/about-tab.png"
+              />
+              <source
+                media="(min-width: 1920px)"
+                srcset="./images/main/about/about-desk.png"
+              />
+              <img
+                src="./images/main/about/about-mob.png"
+                alt="Nice to meet you!"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
     </main>
     <script src="scripts/dropmenu.js"></script>
+    <script src="scripts/slide.js"></script>
   </body>
 </html>
