@@ -1,10 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const menuToggle = document.getElementById('menuOpen');
-  const menuClose = document.getElementById('menuclose-1');
-  const dropmenu = document.getElementById('dropmenu');
+  const menuToggle = document.getElementById('langmenu_open');
+  const menuClose = document.getElementById('menuclose-2');
+  const dropmenu = document.getElementById('langmenu');
+  //   const menuToggle = document.getElementById('menuOpen');
+  // const menuClose = document.getElementById('menuClose');
+  // const dropmenu = document.getElementById('dropmenu');
 
   // Otwieranie menu
-  if (menuOpen) {
+  if (langmenu_open) {
     menuToggle.addEventListener('click', function () {
       dropmenu.classList.add('active');
       document.body.style.overflow = 'hidden'; // Zablokuj przewijanie strony
@@ -12,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Zamykanie menu
-  if (menuClose) {
+  if (langmenu_back) {
     menuClose.addEventListener('click', function () {
       dropmenu.classList.remove('active');
       document.body.style.overflow = ''; // Odblokuj przewijanie strony

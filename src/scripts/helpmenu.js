@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const menuToggle = document.getElementById('menuOpen');
-  const menuClose = document.getElementById('menuclose-1');
-  const dropmenu = document.getElementById('dropmenu');
+  const menuToggle = document.getElementById('helpmenu_open');
+  const menuClose = document.getElementById('menuclose-3');
+  const dropmenu = document.getElementById('helpmenu');
 
   // Otwieranie menu
   if (menuOpen) {

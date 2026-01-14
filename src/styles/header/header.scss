@@ -20,6 +20,7 @@
   }
 
   // ______________________________________________NAV-BAR
+
   &__nav {
     grid-column: 1 / -1;
     grid-row: 1 / 2;
@@ -87,6 +88,7 @@
   }
 
   // ______________________________________________MENU
+
   &__menu {
     grid-column: 1 / -1;
     grid-row: 2 / 3;
@@ -169,6 +171,7 @@
   }
 
   // ______________________________________________CONTENT
+
   &__content {
     grid-column: 1 / -1;
     grid-row: 2 / 3;
@@ -180,11 +183,13 @@
       grid-row: 2 / 3;
 
       // --- Technika "Full Bleed" (rozciągnięcie na całą szerokość ekranu) ---
+
       position: relative;
       right: 50%;
       left: 50%;
 
       // Ustawia szerokość elementu na 100% szerokości okna przeglądarki.
+
       width: 100vw;
       min-height: 195px;
       margin-right: -50vw;
@@ -194,6 +199,7 @@
 
       // Skaluje obrazek tak, aby był w całości widoczny w kontenerze, zachowując proporcje.
       // Obrazek nie zostanie przycięty.
+
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;

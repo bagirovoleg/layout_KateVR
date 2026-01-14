@@ -4,7 +4,7 @@
 @use '../utils/vars';
 @use '../utils/mixins';
 
-.dropmenu {
+.langmenu {
   @include media.grid-320;
 
   grid-column: 1 / -1;
@@ -35,11 +35,11 @@
     transform: translateX(0);
   }
 
-  &__close {
+  &__back {
     grid-column: 1 / -1;
     grid-row: 1 / 2;
 
-    justify-self: end;
+    justify-self: start;
 
     width: 20px;
     height: 20px;
@@ -72,7 +72,6 @@
         text-decoration: none;
 
         height: 49px;
-        box-sizing: border-box;
 
         &:hover {
           background-color: vars.$menu-bg;
