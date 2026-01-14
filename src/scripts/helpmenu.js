@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   const menuToggle = document.getElementById('helpmenu_open');
-  const menuClose = document.getElementById('menuclose-3');
+  const menuClose = document.getElementById('menuclose_3');
   const dropmenu = document.getElementById('helpmenu');
 
   // Otwieranie menu
-  if (menuOpen) {
+  if (menuToggle) {
     menuToggle.addEventListener('click', function () {
       dropmenu.classList.add('active');
       document.body.style.overflow = 'hidden'; // Zablokuj przewijanie strony
