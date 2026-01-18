@@ -100,6 +100,10 @@
       place-items: end;
       margin-right: 8%;
 
+      &_line-4 {
+        display: none;
+      }
+
       .card {
         &__icon {
           width: 61px;
