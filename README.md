@@ -1,6 +1,6 @@
 # KateVR landing page (HARD)
 
-**⚠️ Attention: this is a hard landing page for development. We highly recommend choosing this landing page only if you didn't have a lot of troubles with previous homework tasks and if you sent all homework in time (didn't miss deadlines).** 
+**⚠️ Attention: this is a hard landing page for development. We highly recommend choosing this landing page only if you didn't have a lot of troubles with previous homework tasks and if you sent all homework in time (didn't miss deadlines).**
 
 Implement landing page according to [Figma design](https://www.figma.com/file/Blpg4iapsI7fRqJeSp6DvK/KatVR?node-id=1%3A370) - Use BEM and SCSS
 
@@ -9,9 +9,8 @@ Implement landing page according to [Figma design](https://www.figma.com/file/Bl
 - Tablet 640px
 - Mobile (> 320px)
 
-
-
 ## Github flow
+
 1. **Fork** the repo.
 2. **Clone** the forked one. (The project link should have your name but not `mate-academy`)
 3. Run `npm install` (or just `npm i`).
@@ -25,7 +24,22 @@ Implement landing page according to [Figma design](https://www.figma.com/file/Bl
 11. `git push origin develop` - to send you code for PR.
 12. Create a Pull Request (PR) from your branch `develop` to branch `master` of original repo.
 13. Replace `<your_account>` with your Github username in the
-  [DEMO LINK](https://<your_account>.github.io/layout_KateVR/).
+    [DEMO LINK](https://<your_account>.github.io/layout_KateVR/).
 14. Copy `DEMO LINK` to the PR description.
 
 > To update you PR repeat steps 7-11.
+
+Jest terasa 5,36m x 3,36, schody 1,24m (24 kafelki pojda z ogolnej ilosci)
+
+> Chce polorzyc kafelki taraz+schody.
+
+1. Pryorytet wzor tarasa
+2. Wymiary plytek. 30x30cm.
+3. Mam
+   -Zielona 86 szt.
+   -bierzowa 82,
+   -Zolta61.
+
+! Zrob mi najlepsze mozaiki jakie mozna zrobic. Schody 1 kolor lub 1-2 lub 2-3 - pryorytet taras.
+Tez moze jakis arabski temat? Kwiat? Kwiaty? Dzewo? da sie?
+Lub temat grecki, rzymski
