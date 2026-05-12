@@ -55,7 +55,8 @@
     }
 
     @include media.grid-1920 {
-      justify-content: space-between;
+      gap: 0 30px;
+      grid-template-columns: repeat(16, 1fr);
     }
   }
 
@@ -68,10 +69,20 @@
       justify-content: center;
 
       @include media.grid-1920 {
-        justify-content: space-between;
-
         margin-top: 110px;
         margin-bottom: 110px;
+
+        &--1 {
+          grid-column: 1 / span 4;
+        }
+
+        &--2 {
+          grid-column: 7 / span 4;
+        }
+
+        &--3 {
+          grid-column: 13 / span 4;
+        }
       }
     }
 
