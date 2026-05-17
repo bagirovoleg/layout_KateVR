@@ -1,0 +1,294 @@
+@use '../utils/fonts';
+@use '../utils/media';
+@use '../utils/vars';
+@use '../utils/mixins';
+@use '../utils/button';
+
+.contacts {
+  @include media.grid-320;
+
+  background: vars.$bg;
+
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  @include media.grid-768 {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  @include media.grid-1280 {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  @include media.grid-1920 {
+    padding-top: 160px;
+    padding-bottom: 160px;
+  }
+
+  .color {
+    color: vars.$contrast !important;
+    font-weight: 400;
+  }
+
+  &__container {
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: column;
+
+    @include media.grid-768 {
+      grid-column: 1 / span 3;
+    }
+
+    @include media.grid-1280 {
+      grid-column: 1 / span 5;
+    }
+
+    &-title {
+      margin: 11px 0 32px;
+
+      @include fonts.headline-2-mobile;
+
+      text-transform: uppercase;
+
+      &--small {
+        margin: 0;
+        padding: 0;
+
+        @include fonts.text-1;
+
+        text-transform: none;
+        color: vars.$contrast !important;
+        font-weight: 400;
+      }
+
+      @include media.grid-768 {
+        @include fonts.headline-2-400;
+      }
+
+      @include media.grid-1280 {
+        margin: 11px 0 26px;
+      }
+
+      @include media.grid-1920 {
+        margin: 13px 0 26px;
+      }
+    }
+
+    &__more {
+      grid-column: 1 / -1;
+
+      margin-top: 24px;
+
+      @include fonts.text-1;
+
+      display: block;
+    }
+
+    &-text {
+      &--1,
+      &--2 {
+        display: none;
+
+        @include media.grid-768 {
+          display: block;
+
+          @include fonts.text-1;
+
+          color: vars.$text;
+        }
+      }
+
+      &--1 {
+        margin-bottom: 65px;
+      }
+
+      &--2 {
+        margin-top: 11px;
+      }
+
+      @include media.grid-1280 {
+        &--1 {
+          margin-bottom: 76px;
+        }
+      }
+    }
+  }
+
+  &__form {
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: column;
+
+    .form {
+      &__label {
+        display: none;
+
+        &:not(:focus, :active) {
+          @include mixins.visually-hidden;
+        }
+      }
+    }
+
+    @include media.grid-768 {
+      grid-column: 4 / span 3;
+    }
+
+    @include media.grid-1280 {
+      grid-column: 7 / span 6;
+    }
+
+    @include media.grid-1920 {
+      grid-column: 9 / span 8;
+    }
+
+    &-input,
+    &-input--textarea {
+      border: 1px solid transparent;
+      border-bottom: 1px solid vars.$gray;
+
+      background-color: transparent;
+
+      outline: none;
+
+      @include fonts.text-1;
+
+      font-weight: 400;
+    }
+
+    &-input {
+      width: 100%;
+      height: 40px;
+
+      margin-bottom: 24px;
+      box-sizing: border-box;
+
+      text-align: left;
+
+      &:focus {
+        border-bottom: 1px solid vars.$contrast;
+        background-color: transparent;
+      }
+
+      &:not(:placeholder-shown):valid {
+        border-bottom: 1px solid vars.$valid;
+        background-color: transparent;
+      }
+
+      &:not(:placeholder-shown):invalid {
+        border-bottom: 1px solid vars.$invalid;
+        background-color: transparent;
+      }
+
+      @include media.grid-1280 {
+        height: 46px;
+      }
+
+      &--textarea {
+        display: block;
+
+        height: 88px;
+        width: 100%;
+        margin-top: 24px;
+        margin-bottom: 30px;
+
+        border: 1px solid transparent;
+        border-bottom: 1px solid vars.$gray;
+
+        background-color: transparent;
+
+        @include media.grid-1280 {
+          margin-bottom: 90px;
+        }
+
+        @include media.grid-1920 {
+          margin-bottom: 50px;
+        }
+      }
+    }
+
+    @include media.grid-768 {
+      &-buttons {
+        display: flex;
+
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    &-btn {
+      display: block;
+
+      margin-top: 30px;
+
+      position: relative;
+      z-index: 10;
+
+      @include button.button;
+
+      height: 40px;
+      width: 100%;
+
+      &:hover {
+        cursor: pointer;
+
+        @include button.hover-button;
+      }
+
+      @include media.grid-768 {
+        margin: 0;
+        width: 170px;
+      }
+
+      @include media.grid-1280 {
+        height: 48px;
+      }
+    }
+
+    &-scroll {
+      display: none;
+
+      @include media.grid-768 {
+        display: block;
+
+        a {
+          display: block;
+
+          width: 48px;
+          height: 48px;
+
+          background-image: url('/src/images/icons/main/btn-up.png');
+          background-size: cover;
+          background-repeat: no-repeat;
+
+          &:hover {
+            cursor: pointer;
+
+            @include button.hover;
+
+            background-image: url('/src/images/icons/main/btn-up-hover.png');
+          }
+        }
+      }
+    }
+  }
+
+  &__more {
+    grid-column: 1 / -1;
+
+    margin-top: 30px;
+
+    @include fonts.text-1;
+
+    font-weight: 400;
+
+    color: vars.$text;
+
+    @include media.grid-768 {
+      display: none;
+    }
+  }
+}

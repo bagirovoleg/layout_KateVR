@@ -42,6 +42,14 @@
   font-family: vars.$font-family;
 }
 
+@mixin headline-2-400 {
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 130%;
+  color: vars.$white;
+  font-family: vars.$font-family;
+}
+
 @mixin headline-2-mobile {
   font-weight: 900;
   font-size: 21px;
