@@ -54,35 +54,116 @@
       }
 
       &-language {
-        display: block;
-
+        position: relative; // Ważne dla pozycjonowania dropdownu
+        display: inline-block;
         margin-right: auto;
+        margin-left: 35px;
 
-        a {
-          margin-left: 35px;
+        &-trigger {
+          @include fonts.text-1;
 
-          @include fonts.buttons-links;
+          color: $contrast;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          padding-right: 20px;
 
-          text-decoration: none;
+          // Strzałka w dół
+          background-image: url('/src/images/icons/header/more.png');
+          background-repeat: no-repeat;
+          background-position: right 15px;
+          background-size: 9px 6px;
 
-          color: vars.$contrast;
-
-          position: relative;
-          padding-right: 11px;
-
-          &::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 9px;
-            height: 6px;
-
-            background-image: url('/src/images/icons/header/more.png');
-            background-size: contain;
-            background-repeat: no-repeat;
+          &:focus-visible {
+            outline: 1px solid $contrast;
           }
         }
+
+        .lang-dropmenu {
+          z-index: 1000;
+
+          box-sizing: border-box;
+
+          position: fixed;
+          left: 0;
+          top: 0;
+          right: 0;
+
+          transform: translateX(-100%);
+          transition: transform 0.33s ease-in-out;
+
+          order: 1;
+
+          background-color: vars.$mbg;
+
+          overflow: hidden;
+          overflow-y: auto;
+          width: 100%;
+          height: 100%;
+        }
+
+        // &-dropdown {
+        //   display: none; // Ukryte domyślnie
+        //   position: absolute;
+        //   top: calc(100% + 10px);
+        //   left: 0;
+        //   width: 45px; // Dopasuj szerokość do potrzeb
+        //   max-height: 110px; // Maksymalna wysokość, po której pojawi się scroll
+        //   overflow-y: auto; // Włączenie przewijania
+
+        //   background-color: $mbg;
+        //   border-radius: 5px;
+        //   padding: 10px 0;
+        //   margin: 0;
+        //   list-style: none;
+        //   z-index: 10;
+
+        //   // --- STYLIZACJA SCROLLBARA ---
+        //   &::-webkit-scrollbar {
+        //     width: 2px;
+        //   }
+        //   &::-webkit-scrollbar-track {
+        //     background: vars.$scrollbar-bg;
+        //   }
+        //   &::-webkit-scrollbar-thumb {
+        //     background: $contrast;
+        //     border-radius: 4px;
+        //   }
+        // }
+
+        // &-option {
+        //   @include fonts.text-1;
+        //   color: $contrast;
+        //   padding: 12px 11px;
+        //   cursor: pointer;
+        //   position: relative;
+        //   transition:
+        //     background 0.2s,
+        //     color 0.2s;
+
+        //   &:hover,
+        //   &:focus {
+        //     background-color: rgba(
+        //       $contrast,
+        //       0.1
+        //     ); // Delikatne podświetlenie tła na hover
+        //     color: $white;
+        //     outline: none;
+        //   }
+
+        //   // Stan aktywny / Wybrany element (Biały tekst + pasek z boku)
+        //   &.is-active {
+        //     color: $white;
+        //   }
+        // }
+
+        // // Klasa pomocnicza aktywowana przez JS do pokazywania menu
+        // &.is-open {
+        //   .header__nav-language-dropdown {
+        //     display: block;
+        //   }
+        // }
       }
     }
   }
@@ -251,6 +332,12 @@
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
+
+        &:hover {
+          cursor: pointer;
+
+          background-image: url('/src/images/icons/header/play-hover.png');
+        }
       }
 
       &--text {

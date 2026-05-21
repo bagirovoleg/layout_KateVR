@@ -1,0 +1,216 @@
+@use '../utils/fonts';
+@use '../utils/media';
+@use '../utils/vars';
+@use '../utils/mixins';
+
+.header__nav-langmenu {
+  position: relative; // Kluczowe dla poprawnego pozycjonowania dropdownu
+  display: inline-block;
+}
+
+.header__nav-language-trigger {
+  @include fonts.text-1; // Dostosuj do swojego mixinu czcionek
+
+  color: vars.$contrast;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding-right: 15px;
+
+  background-image: url('/src/images/icons/header/more.png');
+  background-repeat: no-repeat;
+  background-position: right 12px; // Strzałka obniżona w pionie
+  background-size: 9px 6px;
+}
+
+.lang-dropmenu {
+  display: none; // Ukryte domyślnie, aktywowane klasą .active
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  width: 45px;
+  height: 111px;
+
+  background-color: vars.$mbg;
+  border-radius: 5px;
+  padding: 5px 0;
+  margin: 0;
+  list-style: none;
+  z-index: 1000;
+
+  box-sizing: border-box;
+  overflow-y: scroll; // Wymuszenie widoczności stałego paska
+
+  &.active {
+    display: block; // Pokazuje menu po kliknięciu
+  }
+
+  // --- STAŁY PASEK SCROLLBARA ---
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(vars.$contrast, 0.2); // Stała, lekka linia w tle
+  }
+
+  // --- RUCHOMY SUWAK (wysokość ok. 22px) ---
+  &::-webkit-scrollbar-thumb {
+    background: vars.$contrast;
+    border-radius: 4px;
+
+    // Trik skracający suwak w pionie
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    background-clip: padding-box;
+  }
+
+  // --- ELEMENTY LISTY JĘZYKÓW ---
+  &__item {
+    box-sizing: border-box;
+
+    @include fonts.text-1;
+
+    color: vars.$contrast;
+    height: 35px; // Dopasuj wysokość wiersza tak, aby 111px ładnie dzieliło elementy
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    cursor: pointer;
+    position: relative;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+
+    &:hover {
+      background-color: rgba(vars.$contrast, 0.1);
+      color: vars.$white;
+    }
+
+    // Aktywny element (Biały tekst + pasek z prawej strony)
+    &--active {
+      color: vars.$white;
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+
+        @use '../utils/fonts';
+        @use '../utils/media';
+        @use '../utils/vars';
+        @use '../utils/mixins';
+
+        .header__nav-langmenu {
+          position: relative; // Kluczowe dla poprawnego pozycjonowania dropdownu
+          display: inline-block;
+        }
+
+        .header__nav-language-trigger {
+          @include fonts.text-1; // Dostosuj do swojego mixinu czcionek
+
+          color: vars.$contrast;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          padding-right: 15px;
+
+          background-image: url('/src/images/icons/header/more.png');
+          background-repeat: no-repeat;
+          background-position: right 12px; // Strzałka obniżona w pionie
+          background-size: 9px 6px;
+        }
+
+        .lang-dropmenu {
+          display: none; // Ukryte domyślnie, aktywowane klasą .active
+          position: absolute;
+          top: calc(100% + 5px);
+          left: 0;
+          width: 45px;
+          height: 111px;
+
+          background-color: vars.$mbg;
+          border-radius: 5px;
+          padding: 5px 0;
+          margin: 0;
+          list-style: none;
+          z-index: 1000;
+
+          box-sizing: border-box;
+          overflow-y: scroll; // Wymuszenie widoczności stałego paska
+
+          &.active {
+            display: block; // Pokazuje menu po kliknięciu
+          }
+
+          // --- STAŁY PASEK SCROLLBARA ---
+          &::-webkit-scrollbar {
+            width: 4px;
+          }
+
+          &::-webkit-scrollbar-track {
+            background: rgba(vars.$contrast, 0.2); // Stała, lekka linia w tle
+          }
+
+          // --- RUCHOMY SUWAK (wysokość ok. 22px) ---
+          &::-webkit-scrollbar-thumb {
+            background: vars.$contrast;
+            border-radius: 4px;
+
+            // Trik skracający suwak w pionie
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            background-clip: padding-box;
+          }
+
+          // --- ELEMENTY LISTY JĘZYKÓW ---
+          &__item {
+            box-sizing: border-box;
+
+            @include fonts.text-1;
+
+            color: vars.$contrast;
+            height: 35px; // Dopasuj wysokość wiersza tak, aby 111px ładnie dzieliło elementy
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            cursor: pointer;
+            position: relative;
+            transition:
+              background-color 0.2s,
+              color 0.2s;
+
+            &:hover {
+              background-color: rgba(vars.$contrast, 0.1);
+              color: vars.$white;
+            }
+
+            // Aktywny element (Biały tekst + pasek z prawej strony)
+            &--active {
+              color: vars.$white;
+
+              &::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                width: 3px;
+                background-color: vars.$contrast;
+                border-radius: 3px 0 0 3px;
+              }
+            }
+          }
+        }
+
+        background-color: vars.$contrast;
+        border-radius: 3px 0 0 3px;
+      }
+    }
+  }
+}

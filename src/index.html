@@ -42,46 +42,55 @@
             alt="logo"
           />
         </a>
-        <div class="header__nav-language">
-          <ul>
-            <li>
-              <a
-                href="#"
-                class="header__language-eng is-active"
-              >
-                En
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="header__menu">
-          <ul class="header__menu-items">
-            <li class="header__menu-items--item">
-              <a href="#about">About</a>
-            </li>
-            <li class="header__menu-items--item">
-              <a href="#tech">Tech</a>
-            </li>
-            <li class="header__menu-items--item">
-              <a href="#benefits">Benefits</a>
-            </li>
-            <li class="header__menu-items--item">
-              <a href="#contact">Contact</a>
-            </li>
-          </ul>
-          <div class="header__actions">
-            <button class="header__menu-btn"><a href="#buy">Buy Now</a></button>
-            <button
-              class="header__menu-iconmenu"
-              aria-label="Open menu"
+        <div
+          class="header__nav-langmenu"
+          id="header__nav-langmenu"
+        >
+          <button
+            type="button"
+            class="header__nav-language-trigger"
+            id="langMenuOpen"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+          >
+            En
+          </button>
+          <ul
+            class="lang-dropmenu"
+            id="langDropmenu"
+            role="listbox"
+          >
+            <li
+              class="lang-dropmenu__item lang-dropmenu__item--active"
+              role="option"
             >
-              <img
-                src="./images/icons/header/menu.png"
-                id="menuOpen"
-                alt="Open menu"
-              />
-            </button>
-          </div>
+              Ua
+            </li>
+            <li
+              class="lang-dropmenu__item"
+              role="option"
+            >
+              Ru
+            </li>
+            <li
+              class="lang-dropmenu__item"
+              role="option"
+            >
+              Pl
+            </li>
+            <li
+              class="lang-dropmenu__item"
+              role="option"
+            >
+              Fr
+            </li>
+            <li
+              class="lang-dropmenu__item"
+              role="option"
+            >
+              En
+            </li>
+          </ul>
         </div>
       </nav>
       <div class="header__content">
@@ -108,7 +117,7 @@
         <div class="navbar__container navbar__container--1">
           <ul>
             <li><a href="#about">FAQ</a></li>
-            <li><a href="#tech">Help</a></li>
+            <li><a href="#spec">Help</a></li>
           </ul>
         </div>
         <div class="navbar__container navbar__container--2">
@@ -126,7 +135,7 @@
         <div class="navbar__container navbar__container--3">
           <ul>
             <li><a href="#about">Previous</a></li>
-            <li><a href="#tech">Next</a></li>
+            <li><a href="#spec">Next</a></li>
           </ul>
         </div>
       </div>
@@ -146,16 +155,16 @@
         </button>
         <ul class="dropmenu__menu">
           <li class="dropmenu__menu-item">
-            <a href="#shop">About</a>
+            <a href="#about">About</a>
           </li>
           <li class="dropmenu__menu-item">
-            <a href="#contact">Tech</a>
+            <a href="#spec">Tech</a>
           </li>
           <li class="dropmenu__menu-item">
             <a href="#about">Benefits</a>
           </li>
           <li class="dropmenu__menu-item">
-            <a href="#about">Contact</a>
+            <a href="#contact">Contact</a>
           </li>
           <li
             class="dropmenu__menu-item"
@@ -364,7 +373,10 @@
           </div>
         </div>
       </section>
-      <section class="about">
+      <section
+        class="about"
+        id="about"
+      >
         <div class="about__product">
           <h2 class="about__product-title">
             ABOUT
@@ -513,7 +525,10 @@
           </div>
         </div>
       </section>
-      <section class="spec">
+      <section
+        class="spec"
+        id="spec"
+      >
         <h2 class="spec__title spec__title--main">
           TECH
           <span class="color">SPECS</span>
@@ -671,7 +686,10 @@
         </div>
         <button class="whykat__card-btn"><a href="#buy">Buy Now</a></button>
       </section>
-      <section class="contacts">
+      <section
+        class="contacts"
+        id="contact"
+      >
         <div class="contacts__container">
           <p class="contacts__container-title--small">Have any questions?</p>
           <h2 class="contacts__container-title">
@@ -681,9 +699,31 @@
           <p class="contacts__container-text--1">
             Our manager will reply you within 15 minutes
           </p>
-          <p class="contacts__container-text--2">+86-0571-86105373</p>
-          <p class="contacts__container-text--2">global@katvr.com</p>
-          <p class="contacts__container-text--2">overseas@katvr.com</p>
+          <p class="contacts__container-text--2">
+            <a
+              href="tel:+86-0571-86105373"
+              target="_blank"
+              class="helpmenu__contact-item helpmenu__contact-item--phone"
+            >
+              +86-0571-86105373
+            </a>
+          </p>
+          <p class="contacts__container-text--2">
+            <a
+              class="helpmenu__contact-item helpmenu__contact-item--email"
+              href="mailto:global@katvr.com"
+            >
+              global@katvr.com
+            </a>
+          </p>
+          <p class="contacts__container-text--2">
+            <a
+              class="helpmenu__contact-item helpmenu__contact-item--email"
+              href="mailto:overseas@katvr.com"
+            >
+              overseas@katvr.com
+            </a>
+          </p>
         </div>
         <div class="contacts__form form">
           <form
@@ -776,5 +816,6 @@
     <script src="scripts/langmenu.js"></script>
     <script src="scripts/slide.js"></script>
     <script src="scripts/helpmenu.js"></script>
+    <script src="scripts/header-lang-dropmenu.js"></script>
   </body>
 </html>
