@@ -12,6 +12,10 @@
   padding-top: 50px;
   padding-bottom: 50px;
 
+  @include media.grid-768 {
+    padding-bottom: 70px;
+  }
+
   .color {
     color: vars.$contrast !important;
     font-weight: 400;
@@ -27,13 +31,13 @@
     @include media.grid-768 {
       text-align: left;
 
-      margin: 0 0 32px;
+      margin: 70px 0 32px;
     }
 
     @include media.grid-1280 {
       text-align: center;
 
-      margin: 50px 0 84px;
+      margin: 70px 0 84px;
 
       @include fonts.headline-2;
     }

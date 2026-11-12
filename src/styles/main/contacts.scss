@@ -7,14 +7,14 @@
 .contacts {
   @include media.grid-320;
 
-  background: vars.$bg;
+  background: vars.$black;
 
   padding-top: 50px;
   padding-bottom: 50px;
 
   @include media.grid-768 {
     padding-top: 70px;
-    padding-bottom: 70px;
+    padding-bottom: 130px;
   }
 
   @include media.grid-1280 {
@@ -281,7 +281,7 @@
 
     margin-top: 30px;
 
-    @include fonts.text-1;
+    @include fonts.text-3-mobile;
 
     font-weight: 400;
 
