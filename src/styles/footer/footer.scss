@@ -1,0 +1,39 @@
+@use '../utils/fonts';
+@use '../utils/media';
+@use '../utils/vars';
+@use '../utils/mixins';
+@use '../utils/button';
+
+.footer {
+    @include media.grid-320;
+
+    background: vars.$black;
+
+    &-logo {
+        grid-column: 1 / -1;
+    }
+
+    &__container {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: subgrid;
+
+        &-menu {
+
+            grid-column: 1 / span 1;
+        }
+
+        &-contact {
+            grid-column: 2 / span 1;
+        }
+
+        &-socialmedia {
+            grid-column: 2 / span 1;
+
+            ul {
+                display: flex;
+                flex-direction: row;
+            }
+        }
+    }
+}

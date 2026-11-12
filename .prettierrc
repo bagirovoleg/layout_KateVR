@@ -16,6 +16,17 @@
         "singleAttributePerLine": false,
         "htmlWhitespaceSensitivity": "ignore"
       }
+    },
+    {
+      "files": "*.scss",
+      "options": {
+        "parser": "scss",
+        "tabWidth": 4,
+        "insertPragma": false,
+        "endOfLine": "lf",
+        "singleAttributePerLine": false,
+        "htmlWhitespaceSensitivity": "ignore"
+      }
     }
   ]
 }
