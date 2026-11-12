@@ -5,543 +5,543 @@
 @use '../utils/mixins';
 
 .header {
-  @include media.grid-320;
+     @include media.grid-320;
 
-  grid-template-rows: 44px auto;
+     grid-template-rows: 44px auto;
 
-  background: vars.$bg;
+     background: vars.$bg;
 
-  @include media.grid-768 {
-    grid-template-rows: 74px auto;
-  }
+     @include media.grid-768 {
+          grid-template-rows: 74px auto;
+     }
 
-  @include media.grid-1280 {
-    grid-template-rows: 144px auto auto;
-  }
+     @include media.grid-1280 {
+          grid-template-rows: 144px auto auto;
+     }
 
-  // ______________________________________________NAV-BAR
+     // ______________________________________________NAV-BAR
 
-  &__nav {
-    grid-column: 1 / -1;
-    grid-row: 1 / 2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+     &__nav {
+          grid-column: 1 / -1;
+          grid-row: 1 / 2;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
 
-    &-logo {
-      img {
-        height: 12px;
-      }
-    }
-
-    &-language {
-      display: none;
-    }
-
-    @include media.grid-768 {
-      &-logo {
-        img {
-          height: 14px;
-        }
-      }
-    }
-
-    @include media.grid-1280 {
-      &-logo {
-        img {
-          height: 16px;
-        }
-      }
-
-      &-language {
-        position: relative; // Ważne dla pozycjonowania dropdownu
-        display: inline-block;
-        margin-right: auto;
-        margin-left: 35px;
-
-        &-trigger {
-          @include fonts.text-1;
-
-          color: $contrast;
-          background-color: transparent;
-          border: none;
-          outline: none;
-          cursor: pointer;
-          padding-right: 20px;
-
-          // Strzałka w dół
-          background-image: url('/src/images/icons/header/more.png');
-          background-repeat: no-repeat;
-          background-position: right 15px;
-          background-size: 9px 6px;
-
-          &:focus-visible {
-            outline: 1px solid $contrast;
+          &-logo {
+               img {
+                    height: 12px;
+               }
           }
-        }
 
-        .lang-dropmenu {
-          z-index: 1000;
-
-          box-sizing: border-box;
-
-          position: fixed;
-          left: 0;
-          top: 0;
-          right: 0;
-
-          transform: translateX(-100%);
-          transition: transform 0.33s ease-in-out;
-
-          order: 1;
-
-          background-color: vars.$mbg;
-
-          overflow: hidden;
-          overflow-y: auto;
-          width: 100%;
-          height: 100%;
-        }
-
-        // &-dropdown {
-        //   display: none; // Ukryte domyślnie
-        //   position: absolute;
-        //   top: calc(100% + 10px);
-        //   left: 0;
-        //   width: 45px; // Dopasuj szerokość do potrzeb
-        //   max-height: 110px; // Maksymalna wysokość, po której pojawi się scroll
-        //   overflow-y: auto; // Włączenie przewijania
-
-        //   background-color: $mbg;
-        //   border-radius: 5px;
-        //   padding: 10px 0;
-        //   margin: 0;
-        //   list-style: none;
-        //   z-index: 10;
-
-        //   // --- STYLIZACJA SCROLLBARA ---
-        //   &::-webkit-scrollbar {
-        //     width: 2px;
-        //   }
-        //   &::-webkit-scrollbar-track {
-        //     background: vars.$scrollbar-bg;
-        //   }
-        //   &::-webkit-scrollbar-thumb {
-        //     background: $contrast;
-        //     border-radius: 4px;
-        //   }
-        // }
-
-        // &-option {
-        //   @include fonts.text-1;
-        //   color: $contrast;
-        //   padding: 12px 11px;
-        //   cursor: pointer;
-        //   position: relative;
-        //   transition:
-        //     background 0.2s,
-        //     color 0.2s;
-
-        //   &:hover,
-        //   &:focus {
-        //     background-color: rgba(
-        //       $contrast,
-        //       0.1
-        //     ); // Delikatne podświetlenie tła na hover
-        //     color: $white;
-        //     outline: none;
-        //   }
-
-        //   // Stan aktywny / Wybrany element (Biały tekst + pasek z boku)
-        //   &.is-active {
-        //     color: $white;
-        //   }
-        // }
-
-        // // Klasa pomocnicza aktywowana przez JS do pokazywania menu
-        // &.is-open {
-        //   .header__nav-language-dropdown {
-        //     display: block;
-        //   }
-        // }
-      }
-    }
-  }
-
-  // ______________________________________________MENU
-
-  &__menu {
-    grid-column: 1 / -1;
-    grid-row: 2 / 3;
-    display: flex;
-
-    &-items {
-      display: none;
-    }
-
-    &-btn {
-      display: none;
-    }
-
-    &-iconmenu {
-      background-color: transparent;
-
-      border: none;
-
-      img {
-        height: 9px;
-        width: 20px;
-      }
-
-      &:hover {
-        cursor: pointer;
-
-        @include button.hover;
-      }
-    }
-
-    @include media.grid-1280 {
-      &-items {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        position: relative;
-        z-index: 10;
-
-        &--item {
-          a {
-            margin: 0 36px;
-
-            @include fonts.buttons-links;
-
-            color: vars.$white;
-            text-decoration: none;
-
-            &:hover {
-              cursor: pointer;
-
-              @include mixins.hover-underline;
-            }
+          &-language {
+               display: none;
           }
-        }
-      }
 
-      &-btn {
-        display: block;
-
-        position: relative;
-        z-index: 10;
-
-        @include button.button;
-
-        height: 48px;
-        width: 200px;
-
-        &:hover {
-          cursor: pointer;
-
-          @include button.hover-button;
-        }
-      }
-
-      &-iconmenu {
-        display: none;
-      }
-    }
-  }
-
-  // ______________________________________________CONTENT
-
-  &__content {
-    grid-column: 1 / -1;
-    grid-row: 2 / 3;
-    display: flex;
-    flex-direction: column;
-
-    &-image {
-      grid-column: 1 / -1;
-      grid-row: 2 / 3;
-
-      // --- Technika "Full Bleed" (rozciągnięcie na całą szerokość ekranu) ---
-
-      position: relative;
-      right: 50%;
-      left: 50%;
-
-      // Ustawia szerokość elementu na 100% szerokości okna przeglądarki.
-
-      width: 100vw;
-      min-height: 195px;
-      margin-right: -50vw;
-      margin-left: -50vw;
-
-      background-image: url('/src/images/header/header-mob.png');
-
-      // Skaluje obrazek tak, aby był w całości widoczny w kontenerze, zachowując proporcje.
-      // Obrazek nie zostanie przycięty.
-
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    &-title {
-      @include fonts.headline-1-mobile;
-
-      .color {
-        color: vars.$contrast;
-        font-weight: 400;
-      }
-    }
-
-    &-text {
-      margin: 17px 0 8px;
-
-      @include fonts.buttons-links;
-
-      color: vars.$text;
-    }
-
-    &-price {
-      text-align: center;
-      margin-bottom: 16px;
-
-      @include fonts.price;
-
-      @include media.grid-768 {
-        text-align: left;
-      }
-    }
-
-    &-play {
-      display: flex;
-      align-items: center;
-      justify-content: start;
-
-      &--icon {
-        background-color: transparent;
-
-        border: none;
-
-        width: 190px;
-        height: 66px;
-
-        background-image: url('/src/images/icons/header/play.png');
-
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-
-        &:hover {
-          cursor: pointer;
-
-          background-image: url('/src/images/icons/header/play-hover.png');
-        }
-      }
-
-      &--text {
-        position: absolute;
-        margin-left: 96px;
-
-        @include fonts.buttons-links;
-      }
-    }
-
-    @include media.grid-768 {
-      display: contents;
-
-      &-image {
-        grid-column: 3 / -1;
-
-        position: static;
-
-        width: 100%;
-        margin: 25px 0 0;
-        right: auto;
-        left: auto;
-
-        background-image: url('/src/images/header/header-tablet.png');
-      }
-
-      &-container {
-        grid-column: 1 / 4;
-        grid-row: 2 / 3;
-
-        margin-top: 25px;
-      }
-
-      &-text {
-        margin: 17px 0 10px;
-      }
-
-      &-play {
-        margin-bottom: 40px;
-      }
-    }
-
-    @include media.grid-1280 {
-      &-image {
-        grid-column: 5 / -1;
-        grid-row: 1 / -1;
-
-        position: relative;
-        width: calc(100% + 110px);
-        height: 100%;
-        margin: 0 -110px 0 0;
-        top: 0;
-        left: 0;
-
-        background-image: url('/src/images/header/header-desktop.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-
-      &-container {
-        grid-column: 1 / 7;
-        grid-row: 2 / 3;
-
-        display: grid;
-        grid-template-columns: subgrid;
-      }
-
-      &-title {
-        grid-column: 1 / 7;
-
-        @include fonts.headline-1280;
-      }
-
-      &-text {
-        grid-column: 2 / 7;
-
-        margin: 17px 0;
-      }
-
-      &-price {
-        grid-column: 2 / 7;
-      }
-
-      &-play {
-        grid-column: 2 / 7;
-
-        margin-bottom: 0;
-      }
-    }
-
-    @include media.grid-1920 {
-      &-image {
-        grid-column: 6 / -1;
-        grid-row: 1 / 3;
-
-        width: calc(100% + 234px);
-        height: calc(100% + 124px);
-        margin-right: -234px;
-
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-
-      &-title {
-        @include fonts.headline-1920;
-      }
-
-      &-text,
-      &-price,
-      &-play {
-        grid-column: 2 / 6;
-      }
-
-      &-text {
-        @include fonts.headline-2-mobile;
-
-        color: vars.$text;
-      }
-    }
-  }
-
-  // ______________________________________________BUTTON
-  &__btn {
-    grid-column: 1 / -1;
-    grid-row: 3 / 4;
-
-    @include button.button;
-
-    margin-top: 23px;
-
-    @include media.grid-768 {
-      display: none;
-    }
-  }
-
-  // ______________________________________________NAV-BAR
-  &__navbar {
-    grid-column: 1 / -1;
-    grid-row: 3 / 4;
-    display: none;
-
-    @include media.grid-1280 {
-      grid-column: 1 / -1;
-
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-
-      margin: 96px 0;
-
-      ul {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        gap: 40px;
-      }
-
-      a {
-        @include fonts.buttons-links;
-
-        color: vars.$white;
-        text-decoration: none;
-
-        position: relative;
-        z-index: 10;
-
-        &.color {
-          color: vars.$contrast;
-          font-weight: 400;
-
-          position: relative;
-          padding-bottom: 18px;
-
-          &::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 9px;
-            height: 6px;
-
-            background-image: url('/src/images/icons/header/more.png');
-            background-size: contain;
-            background-repeat: no-repeat;
+          @include media.grid-768 {
+               &-logo {
+                    img {
+                         height: 14px;
+                    }
+               }
           }
-        }
 
-        &:hover:not(.color) {
-          cursor: pointer;
+          @include media.grid-1280 {
+               &-logo {
+                    img {
+                         height: 16px;
+                    }
+               }
 
-          @include mixins.hover-underline;
-        }
-      }
+               &-language {
+                    position: relative; // Ważne dla pozycjonowania dropdownu
+                    display: inline-block;
+                    margin-right: auto;
+                    margin-left: 35px;
 
-      .navbar__container--3 {
-        ul {
-          gap: 100px;
-        }
-      }
-    }
-  }
+                    &-trigger {
+                         @include fonts.text-1;
+
+                         color: $contrast;
+                         background-color: transparent;
+                         border: none;
+                         outline: none;
+                         cursor: pointer;
+                         padding-right: 20px;
+
+                         // Strzałka w dół
+                         background-image: url('/src/images/icons/header/more.png');
+                         background-repeat: no-repeat;
+                         background-position: right 15px;
+                         background-size: 9px 6px;
+
+                         &:focus-visible {
+                              outline: 1px solid $contrast;
+                         }
+                    }
+
+                    .lang-dropmenu {
+                         z-index: 1000;
+
+                         box-sizing: border-box;
+
+                         position: fixed;
+                         left: 0;
+                         top: 0;
+                         right: 0;
+
+                         transform: translateX(-100%);
+                         transition: transform 0.33s ease-in-out;
+
+                         order: 1;
+
+                         background-color: vars.$mbg;
+
+                         overflow: hidden;
+                         overflow-y: auto;
+                         width: 100%;
+                         height: 100%;
+                    }
+
+                    // &-dropdown {
+                    //   display: none; // Ukryte domyślnie
+                    //   position: absolute;
+                    //   top: calc(100% + 10px);
+                    //   left: 0;
+                    //   width: 45px; // Dopasuj szerokość do potrzeb
+                    //   max-height: 110px; // Maksymalna wysokość, po której pojawi się scroll
+                    //   overflow-y: auto; // Włączenie przewijania
+
+                    //   background-color: $mbg;
+                    //   border-radius: 5px;
+                    //   padding: 10px 0;
+                    //   margin: 0;
+                    //   list-style: none;
+                    //   z-index: 10;
+
+                    //   // --- STYLIZACJA SCROLLBARA ---
+                    //   &::-webkit-scrollbar {
+                    //     width: 2px;
+                    //   }
+                    //   &::-webkit-scrollbar-track {
+                    //     background: vars.$scrollbar-bg;
+                    //   }
+                    //   &::-webkit-scrollbar-thumb {
+                    //     background: $contrast;
+                    //     border-radius: 4px;
+                    //   }
+                    // }
+
+                    // &-option {
+                    //   @include fonts.text-1;
+                    //   color: $contrast;
+                    //   padding: 12px 11px;
+                    //   cursor: pointer;
+                    //   position: relative;
+                    //   transition:
+                    //     background 0.2s,
+                    //     color 0.2s;
+
+                    //   &:hover,
+                    //   &:focus {
+                    //     background-color: rgba(
+                    //       $contrast,
+                    //       0.1
+                    //     ); // Delikatne podświetlenie tła na hover
+                    //     color: $white;
+                    //     outline: none;
+                    //   }
+
+                    //   // Stan aktywny / Wybrany element (Biały tekst + pasek z boku)
+                    //   &.is-active {
+                    //     color: $white;
+                    //   }
+                    // }
+
+                    // // Klasa pomocnicza aktywowana przez JS do pokazywania menu
+                    // &.is-open {
+                    //   .header__nav-language-dropdown {
+                    //     display: block;
+                    //   }
+                    // }
+               }
+          }
+     }
+
+     // ______________________________________________MENU
+
+     &__menu {
+          grid-column: 1 / -1;
+          grid-row: 2 / 3;
+          display: flex;
+
+          &-items {
+               display: none;
+          }
+
+          &-btn {
+               display: none;
+          }
+
+          &-iconmenu {
+               background-color: transparent;
+
+               border: none;
+
+               img {
+                    height: 9px;
+                    width: 20px;
+               }
+
+               &:hover {
+                    cursor: pointer;
+
+                    @include button.hover;
+               }
+          }
+
+          @include media.grid-1280 {
+               &-items {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    position: relative;
+                    z-index: 10;
+
+                    &--item {
+                         a {
+                              margin: 0 36px;
+
+                              @include fonts.buttons-links;
+
+                              color: vars.$white;
+                              text-decoration: none;
+
+                              &:hover {
+                                   cursor: pointer;
+
+                                   @include mixins.hover-underline;
+                              }
+                         }
+                    }
+               }
+
+               &-btn {
+                    display: block;
+
+                    position: relative;
+                    z-index: 10;
+
+                    @include button.button;
+
+                    height: 48px;
+                    width: 200px;
+
+                    &:hover {
+                         cursor: pointer;
+
+                         @include button.hover-button;
+                    }
+               }
+
+               &-iconmenu {
+                    display: none;
+               }
+          }
+     }
+
+     // ______________________________________________CONTENT
+
+     &__content {
+          grid-column: 1 / -1;
+          grid-row: 2 / 3;
+          display: flex;
+          flex-direction: column;
+
+          &-image {
+               grid-column: 1 / -1;
+               grid-row: 2 / 3;
+
+               // --- Technika "Full Bleed" (rozciągnięcie na całą szerokość ekranu) ---
+
+               position: relative;
+               right: 50%;
+               left: 50%;
+
+               // Ustawia szerokość elementu na 100% szerokości okna przeglądarki.
+
+               width: 100vw;
+               min-height: 195px;
+               margin-right: -50vw;
+               margin-left: -50vw;
+
+               background-image: url('/src/images/header/header-mob.png');
+
+               // Skaluje obrazek tak, aby był w całości widoczny w kontenerze, zachowując proporcje.
+               // Obrazek nie zostanie przycięty.
+
+               background-size: contain;
+               background-position: center;
+               background-repeat: no-repeat;
+          }
+
+          &-title {
+               @include fonts.headline-1-mobile;
+
+               .color {
+                    color: vars.$contrast;
+                    font-weight: 400;
+               }
+          }
+
+          &-text {
+               margin: 17px 0 8px;
+
+               @include fonts.buttons-links;
+
+               color: vars.$text;
+          }
+
+          &-price {
+               text-align: center;
+               margin-bottom: 16px;
+
+               @include fonts.price;
+
+               @include media.grid-768 {
+                    text-align: left;
+               }
+          }
+
+          &-play {
+               display: flex;
+               align-items: center;
+               justify-content: start;
+
+               &--icon {
+                    background-color: transparent;
+
+                    border: none;
+
+                    width: 190px;
+                    height: 66px;
+
+                    background-image: url('/src/images/icons/header/play.png');
+
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+
+                    &:hover {
+                         cursor: pointer;
+
+                         background-image: url('/src/images/icons/header/play-hover.png');
+                    }
+               }
+
+               &--text {
+                    position: absolute;
+                    margin-left: 96px;
+
+                    @include fonts.buttons-links;
+               }
+          }
+
+          @include media.grid-768 {
+               display: contents;
+
+               &-image {
+                    grid-column: 3 / -1;
+
+                    position: static;
+
+                    width: 100%;
+                    margin: 25px 0 0;
+                    right: auto;
+                    left: auto;
+
+                    background-image: url('/src/images/header/header-tablet.png');
+               }
+
+               &-container {
+                    grid-column: 1 / 4;
+                    grid-row: 2 / 3;
+
+                    margin-top: 25px;
+               }
+
+               &-text {
+                    margin: 17px 0 10px;
+               }
+
+               &-play {
+                    margin-bottom: 40px;
+               }
+          }
+
+          @include media.grid-1280 {
+               &-image {
+                    grid-column: 5 / -1;
+                    grid-row: 1 / -1;
+
+                    position: relative;
+                    width: calc(100% + 110px);
+                    height: 100%;
+                    margin: 0 -110px 0 0;
+                    top: 0;
+                    left: 0;
+
+                    background-image: url('/src/images/header/header-desktop.png');
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+               }
+
+               &-container {
+                    grid-column: 1 / 7;
+                    grid-row: 2 / 3;
+
+                    display: grid;
+                    grid-template-columns: subgrid;
+               }
+
+               &-title {
+                    grid-column: 1 / 7;
+
+                    @include fonts.headline-1280;
+               }
+
+               &-text {
+                    grid-column: 2 / 7;
+
+                    margin: 17px 0;
+               }
+
+               &-price {
+                    grid-column: 2 / 7;
+               }
+
+               &-play {
+                    grid-column: 2 / 7;
+
+                    margin-bottom: 0;
+               }
+          }
+
+          @include media.grid-1920 {
+               &-image {
+                    grid-column: 6 / -1;
+                    grid-row: 1 / 3;
+
+                    width: calc(100% + 234px);
+                    height: calc(100% + 124px);
+                    margin-right: -234px;
+
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+               }
+
+               &-title {
+                    @include fonts.headline-1920;
+               }
+
+               &-text,
+               &-price,
+               &-play {
+                    grid-column: 2 / 6;
+               }
+
+               &-text {
+                    @include fonts.headline-2-mobile;
+
+                    color: vars.$text;
+               }
+          }
+     }
+
+     // ______________________________________________BUTTON
+     &__btn {
+          grid-column: 1 / -1;
+          grid-row: 3 / 4;
+
+          @include button.button;
+
+          margin-top: 23px;
+
+          @include media.grid-768 {
+               display: none;
+          }
+     }
+
+     // ______________________________________________NAV-BAR
+     &__navbar {
+          grid-column: 1 / -1;
+          grid-row: 3 / 4;
+          display: none;
+
+          @include media.grid-1280 {
+               grid-column: 1 / -1;
+
+               display: flex;
+               flex-direction: row;
+               align-items: center;
+               justify-content: space-between;
+
+               margin: 96px 0;
+
+               ul {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    gap: 40px;
+               }
+
+               a {
+                    @include fonts.buttons-links;
+
+                    color: vars.$white;
+                    text-decoration: none;
+
+                    position: relative;
+                    z-index: 10;
+
+                    &.color {
+                         color: vars.$contrast;
+                         font-weight: 400;
+
+                         position: relative;
+                         padding-bottom: 18px;
+
+                         &::after {
+                              content: '';
+                              position: absolute;
+                              bottom: 0;
+                              left: 50%;
+                              transform: translateX(-50%);
+                              width: 9px;
+                              height: 6px;
+
+                              background-image: url('/src/images/icons/header/more.png');
+                              background-size: contain;
+                              background-repeat: no-repeat;
+                         }
+                    }
+
+                    &:hover:not(.color) {
+                         cursor: pointer;
+
+                         @include mixins.hover-underline;
+                    }
+               }
+
+               .navbar__container--3 {
+                    ul {
+                         gap: 100px;
+                    }
+               }
+          }
+     }
 }

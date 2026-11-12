@@ -1,105 +1,105 @@
 @use '../utils/vars';
 
 @mixin font($size, $weight, $lh, $color: null) {
-  font-size: $size;
-  font-weight: $weight;
-  line-height: $lh;
+     font-size: $size;
+     font-weight: $weight;
+     line-height: $lh;
 
-  @if $color {
-    color: $color;
-  }
+     @if $color {
+          color: $color;
+     }
 }
 
 @mixin headline-1280 {
-  font-weight: 900;
-  font-size: 46px;
-  line-height: 130%;
-  color: vars.$white;
-  font-family: vars.$font-family;
+     font-weight: 900;
+     font-size: 46px;
+     line-height: 130%;
+     color: vars.$white;
+     font-family: vars.$font-family;
 }
 
 @mixin headline-1920 {
-  font-weight: 900;
-  font-size: 54px;
-  line-height: 130%;
-  color: vars.$white;
-  font-family: vars.$font-family;
+     font-weight: 900;
+     font-size: 54px;
+     line-height: 130%;
+     color: vars.$white;
+     font-family: vars.$font-family;
 }
 
 @mixin headline-1-mobile {
-  font-weight: 900;
-  font-size: 26px;
-  line-height: 130%;
-  color: vars.$white;
-  font-family: vars.$font-family;
+     font-weight: 900;
+     font-size: 26px;
+     line-height: 130%;
+     color: vars.$white;
+     font-family: vars.$font-family;
 }
 
 @mixin headline-2 {
-  font-weight: 900;
-  font-size: 36px;
-  line-height: 130%;
-  color: vars.$white;
-  font-family: vars.$font-family;
+     font-weight: 900;
+     font-size: 36px;
+     line-height: 130%;
+     color: vars.$white;
+     font-family: vars.$font-family;
 }
 
 @mixin headline-2-400 {
-  font-weight: 400;
-  font-size: 36px;
-  line-height: 130%;
-  color: vars.$white;
-  font-family: vars.$font-family;
+     font-weight: 400;
+     font-size: 36px;
+     line-height: 130%;
+     color: vars.$white;
+     font-family: vars.$font-family;
 }
 
 @mixin headline-2-mobile {
-  font-weight: 900;
-  font-size: 21px;
-  line-height: 130%;
-  color: vars.$white;
-  font-family: vars.$font-family;
+     font-weight: 900;
+     font-size: 21px;
+     line-height: 130%;
+     color: vars.$white;
+     font-family: vars.$font-family;
 }
 
 @mixin price {
-  font-weight: 500;
-  font-size: 18px;
-  color: vars.$white;
-  font-family: vars.$font-family;
+     font-weight: 500;
+     font-size: 18px;
+     color: vars.$white;
+     font-family: vars.$font-family;
 }
 
 @mixin headline-3 {
-  font-weight: 900;
-  font-size: 16px;
-  color: vars.$white;
-  font-family: vars.$font-family;
+     font-weight: 900;
+     font-size: 16px;
+     color: vars.$white;
+     font-family: vars.$font-family;
 }
 
 @mixin buttons-links {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  color: vars.$white;
-  font-family: vars.$font-family;
+     font-weight: 500;
+     font-size: 16px;
+     line-height: 150%;
+     color: vars.$white;
+     font-family: vars.$font-family;
 }
 
 @mixin text-1 {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
-  color: vars.$white;
-  font-family: vars.$font-family;
+     font-weight: 400;
+     font-size: 16px;
+     line-height: 150%;
+     color: vars.$white;
+     font-family: vars.$font-family;
 }
 
 @mixin text-2 {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 150%;
-  color: vars.$white;
-  font-family: vars.$font-family;
+     font-weight: 400;
+     font-size: 14px;
+     line-height: 150%;
+     color: vars.$white;
+     font-family: vars.$font-family;
 }
 
 @mixin text-3-mobile {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 150%;
-  color: vars.$white;
-  font-family: vars.$font-family;
+     font-weight: 400;
+     font-size: 12px;
+     line-height: 150%;
+     color: vars.$white;
+     font-family: vars.$font-family;
 }

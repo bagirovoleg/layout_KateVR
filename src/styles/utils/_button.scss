@@ -2,75 +2,75 @@
 @use '../utils/fonts';
 
 @mixin hover() {
-  // background-color: vars.$black-900;
-  // border: 1px solid vars.$contrast;
-  color: vars.$contrast;
+     // background-color: vars.$black-900;
+     // border: 1px solid vars.$contrast;
+     color: vars.$contrast;
 
-  transition:
-    background-color 300ms,
-    transform 300ms ease-in-out;
-  transform: translateY(-4px) scale(1.01);
+     transition:
+          background-color 300ms,
+          transform 300ms ease-in-out;
+     transform: translateY(-4px) scale(1.01);
 
-  cursor: pointer;
+     cursor: pointer;
 }
 
 @mixin hover-button() {
-  background-color: vars.$white;
+     background-color: vars.$white;
 
-  border: 1px solid vars.$contrast;
-  color: vars.$contrast;
+     border: 1px solid vars.$contrast;
+     color: vars.$contrast;
 
-  transition:
-    background-color 300ms,
-    transform 300ms ease-in-out;
-  transform: translateY(-4px) scale(1.01);
+     transition:
+          background-color 300ms,
+          transform 300ms ease-in-out;
+     transform: translateY(-4px) scale(1.01);
 
-  cursor: pointer;
+     cursor: pointer;
 }
 
 @mixin link-hover() {
-  border-bottom: 1px solid vars.$valid;
+     border-bottom: 1px solid vars.$valid;
 
-  transition: transform 300ms ease-in-out;
-  transform: translateY(-4px) scale(1.1);
+     transition: transform 300ms ease-in-out;
+     transform: translateY(-4px) scale(1.1);
 
-  cursor: pointer;
+     cursor: pointer;
 }
 
 @mixin button-passed() {
-  // border: 1px solid vars.$gray-600;
+     // border: 1px solid vars.$gray-600;
 }
 
 @mixin button() {
-  display: block;
+     display: block;
 
-  margin: 0;
-  padding: 0;
+     margin: 0;
+     padding: 0;
 
-  border: none;
-  width: 100%;
-  height: 40px;
-  border-radius: 4px;
+     border: none;
+     width: 100%;
+     height: 40px;
+     border-radius: 4px;
 
-  @include fonts.buttons-links;
+     @include fonts.buttons-links;
 
-  background-color: vars.$contrast;
-  color: vars.$white;
+     background-color: vars.$contrast;
+     color: vars.$white;
 
-  &:hover {
-    @include hover-button;
+     &:hover {
+          @include hover-button;
 
-    cursor: pointer;
-  }
+          cursor: pointer;
+     }
 
-  &:focus {
-    @include button-passed;
+     &:focus {
+          @include button-passed;
 
-    cursor: pointer;
-  }
+          cursor: pointer;
+     }
 
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
+     a {
+          text-decoration: none;
+          color: inherit;
+     }
 }

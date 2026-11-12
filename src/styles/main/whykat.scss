@@ -5,171 +5,171 @@
 @use '../utils/button';
 
 .whykat {
-  @include media.grid-320;
+     @include media.grid-320;
 
-  background: vars.$bg;
+     background: vars.$bg;
 
-  padding-top: 50px;
-  padding-bottom: 50px;
+     padding-top: 50px;
+     padding-bottom: 50px;
 
-  @include media.grid-768 {
-    padding-bottom: 70px;
-  }
+     @include media.grid-768 {
+          padding-bottom: 70px;
+     }
 
-  .color {
-    color: vars.$contrast !important;
-    font-weight: 400;
-  }
+     .color {
+          color: vars.$contrast !important;
+          font-weight: 400;
+     }
 
-  &__title {
-    grid-column: 1 / -1;
+     &__title {
+          grid-column: 1 / -1;
 
-    margin: 50px 0 0;
+          margin: 50px 0 0;
 
-    @include fonts.headline-2-mobile;
+          @include fonts.headline-2-mobile;
 
-    @include media.grid-768 {
-      text-align: left;
+          @include media.grid-768 {
+               text-align: left;
 
-      margin: 70px 0 32px;
-    }
+               margin: 70px 0 32px;
+          }
 
-    @include media.grid-1280 {
-      text-align: center;
+          @include media.grid-1280 {
+               text-align: center;
 
-      margin: 70px 0 84px;
+               margin: 70px 0 84px;
 
-      @include fonts.headline-2;
-    }
+               @include fonts.headline-2;
+          }
 
-    @include media.grid-1920 {
-      margin: 100px 0 84px;
-    }
-  }
+          @include media.grid-1920 {
+               margin: 100px 0 84px;
+          }
+     }
 
-  &__content {
-    grid-column: 1 / -1;
+     &__content {
+          grid-column: 1 / -1;
 
-    @include media.grid-768 {
-      display: grid;
-      gap: 0 20px;
-      grid-template-columns: repeat(3, 1fr);
+          @include media.grid-768 {
+               display: grid;
+               gap: 0 20px;
+               grid-template-columns: repeat(3, 1fr);
 
-      margin-bottom: 20px;
-    }
+               margin-bottom: 20px;
+          }
 
-    @include media.grid-1920 {
-      gap: 0 30px;
-      grid-template-columns: repeat(16, 1fr);
-    }
-  }
+          @include media.grid-1920 {
+               gap: 0 30px;
+               grid-template-columns: repeat(16, 1fr);
+          }
+     }
 
-  &__card {
-    @include media.grid-768 {
-      display: flex;
+     &__card {
+          @include media.grid-768 {
+               display: flex;
 
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+               flex-direction: column;
+               align-items: center;
+               justify-content: center;
 
-      @include media.grid-1920 {
-        margin-top: 110px;
-        margin-bottom: 110px;
+               @include media.grid-1920 {
+                    margin-top: 110px;
+                    margin-bottom: 110px;
 
-        &--1 {
-          grid-column: 1 / span 4;
-        }
+                    &--1 {
+                         grid-column: 1 / span 4;
+                    }
 
-        &--2 {
-          grid-column: 7 / span 4;
-        }
+                    &--2 {
+                         grid-column: 7 / span 4;
+                    }
 
-        &--3 {
-          grid-column: 13 / span 4;
-        }
-      }
-    }
+                    &--3 {
+                         grid-column: 13 / span 4;
+                    }
+               }
+          }
 
-    &-image {
-      display: none;
+          &-image {
+               display: none;
 
-      margin: 0;
-      padding: 0;
+               margin: 0;
+               padding: 0;
 
-      width: auto;
-      height: 80px;
+               width: auto;
+               height: 80px;
 
-      @include media.grid-768 {
-        display: block;
+               @include media.grid-768 {
+                    display: block;
 
-        margin: 0 auto;
-        padding: 0;
-      }
-    }
+                    margin: 0 auto;
+                    padding: 0;
+               }
+          }
 
-    &-title {
-      margin: 20px 0 11px;
+          &-title {
+               margin: 20px 0 11px;
 
-      @include fonts.headline-3;
+               @include fonts.headline-3;
 
-      font-weight: 400;
+               font-weight: 400;
 
-      &:last-child {
-        margin-bottom: 0;
-      }
+               &:last-child {
+                    margin-bottom: 0;
+               }
 
-      @include media.grid-768 {
-        margin: 26px 0 37px;
+               @include media.grid-768 {
+                    margin: 26px 0 37px;
 
-        text-align: center;
-      }
+                    text-align: center;
+               }
 
-      @include media.grid-1280 {
-        margin: 30px 0 16px;
+               @include media.grid-1280 {
+                    margin: 30px 0 16px;
 
-        text-align: center;
-      }
-    }
+                    text-align: center;
+               }
+          }
 
-    &-text {
-      @include fonts.text-1;
+          &-text {
+               @include fonts.text-1;
 
-      color: vars.$text;
+               color: vars.$text;
 
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
+               display: -webkit-box;
+               -webkit-line-clamp: 3;
+               -webkit-box-orient: vertical;
+               overflow: hidden;
 
-      @include media.grid-768 {
-        @include fonts.text-1;
+               @include media.grid-768 {
+                    @include fonts.text-1;
 
-        color: vars.$text;
+                    color: vars.$text;
 
-        text-align: center;
-      }
-    }
+                    text-align: center;
+               }
+          }
 
-    &-btn {
-      display: none;
+          &-btn {
+               display: none;
 
-      @include media.grid-1280 {
-        grid-column: 6 / span 2;
+               @include media.grid-1280 {
+                    grid-column: 6 / span 2;
 
-        display: block;
+                    display: block;
 
-        @include button.button;
+                    @include button.button;
 
-        width: calc(100% + 60px);
-        margin-left: -30px;
+                    width: calc(100% + 60px);
+                    margin-left: -30px;
 
-        margin-top: 80px;
-        margin-bottom: 52px;
-      }
+                    margin-top: 80px;
+                    margin-bottom: 52px;
+               }
 
-      @include media.grid-1920 {
-        display: none;
-      }
-    }
-  }
+               @include media.grid-1920 {
+                    display: none;
+               }
+          }
+     }
 }

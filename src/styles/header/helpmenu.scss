@@ -5,128 +5,128 @@
 @use '../utils/mixins';
 
 .helpmenu {
-  @include media.grid-320;
+     @include media.grid-320;
 
-  grid-column: 1 / -1;
-  grid-template-columns: 97px auto;
+     grid-column: 1 / -1;
+     grid-template-columns: 97px auto;
 
-  z-index: 1000;
+     z-index: 1000;
 
-  box-sizing: border-box;
+     box-sizing: border-box;
 
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
+     position: fixed;
+     left: 0;
+     top: 0;
+     right: 0;
 
-  transform: translateX(-100%);
-  transition: transform 0.33s ease-in-out;
+     transform: translateX(-100%);
+     transition: transform 0.33s ease-in-out;
 
-  order: 1;
+     order: 1;
 
-  background-color: vars.$mbg;
+     background-color: vars.$mbg;
 
-  overflow: hidden;
-  overflow-y: auto;
-  width: 100%;
-  height: 100%;
+     overflow: hidden;
+     overflow-y: auto;
+     width: 100%;
+     height: 100%;
 
-  &.active {
-    transform: translateX(0);
-  }
+     &.active {
+          transform: translateX(0);
+     }
 
-  &__close {
-    grid-column: 1 / -1;
-    grid-row: 1 / 2;
+     &__close {
+          grid-column: 1 / -1;
+          grid-row: 1 / 2;
 
-    justify-self: right;
+          justify-self: right;
 
-    width: 20px;
-    height: 20px;
-    margin: 20px 0 30px;
+          width: 20px;
+          height: 20px;
+          margin: 20px 0 30px;
 
-    background: transparent;
-    border: none;
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-  }
+          background: transparent;
+          border: none;
+          background-size: cover;
+          background-position: center;
+          cursor: pointer;
+     }
 
-  &__title {
-    grid-column: 1 / -1;
-    grid-row: 2 / 3;
+     &__title {
+          grid-column: 1 / -1;
+          grid-row: 2 / 3;
 
-    margin-bottom: 30px;
+          margin-bottom: 30px;
 
-    @include fonts.headline-2-mobile;
+          @include fonts.headline-2-mobile;
 
-    .color {
-      color: vars.$contrast;
-      font-weight: 400;
-    }
-  }
+          .color {
+               color: vars.$contrast;
+               font-weight: 400;
+          }
+     }
 
-  &__container {
-    grid-column: 1 / -1;
+     &__container {
+          grid-column: 1 / -1;
 
-    &-text {
-      grid-column: 1 / -1;
+          &-text {
+               grid-column: 1 / -1;
 
-      margin: 0;
+               margin: 0;
 
-      @include fonts.text-1;
+               @include fonts.text-1;
 
-      color: vars.$text;
+               color: vars.$text;
 
-      .color {
-        color: vars.$contrast;
-        font-weight: 400;
+               .color {
+                    color: vars.$contrast;
+                    font-weight: 400;
 
-        cursor: pointer;
-      }
+                    cursor: pointer;
+               }
 
-      &--1 {
-        margin-top: 30px;
-      }
-    }
-  }
+               &--1 {
+                    margin-top: 30px;
+               }
+          }
+     }
 
-  &__links {
-    grid-column: 1 / -1;
-    grid-row: 4 / 5;
+     &__links {
+          grid-column: 1 / -1;
+          grid-row: 4 / 5;
 
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin: 30px 0;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          margin: 30px 0;
 
-    &-item {
-      @include fonts.text-1;
+          &-item {
+               @include fonts.text-1;
 
-      color: vars.$contrast;
+               color: vars.$contrast;
 
-      text-decoration: none;
-    }
-  }
+               text-decoration: none;
+          }
+     }
 
-  &__contact {
-    grid-column: 1 / -1;
-    grid-row: 5 / 6;
+     &__contact {
+          grid-column: 1 / -1;
+          grid-row: 5 / 6;
 
-    display: flex;
-    flex-direction: column;
-    gap: 11px;
+          display: flex;
+          flex-direction: column;
+          gap: 11px;
 
-    margin-bottom: 70px;
+          margin-bottom: 70px;
 
-    cursor: pointer;
+          cursor: pointer;
 
-    &-item {
-      @include fonts.text-1;
+          &-item {
+               @include fonts.text-1;
 
-      color: vars.$text;
+               color: vars.$text;
 
-      text-decoration: none;
-    }
-  }
+               text-decoration: none;
+          }
+     }
 }

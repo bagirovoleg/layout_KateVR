@@ -1,42 +1,42 @@
 @use '../utils/vars';
 
 @mixin visually-hidden() {
-  position: absolute;
-  overflow: hidden;
-  height: 1px;
-  width: 1px;
-  white-space: nowrap;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
+     position: absolute;
+     overflow: hidden;
+     height: 1px;
+     width: 1px;
+     white-space: nowrap;
+     clip: rect(0 0 0 0);
+     clip-path: inset(50%);
 }
 
 @mixin hover-underline() {
-  position: relative;
+     position: relative;
 
-  transition:
-    color 300ms,
-    transform 300ms ease-in-out;
+     transition:
+          color 300ms,
+          transform 300ms ease-in-out;
 
-  &:hover {
-    color: vars.$contrast;
-    transform: translateY(-4px) scale(1.01);
-  }
+     &:hover {
+          color: vars.$contrast;
+          transform: translateY(-4px) scale(1.01);
+     }
 
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -10px;
-    height: 2px;
-    background-color: vars.$contrast;
-    opacity: 0;
-    transition: opacity 300ms;
-  }
+     &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -10px;
+          height: 2px;
+          background-color: vars.$contrast;
+          opacity: 0;
+          transition: opacity 300ms;
+     }
 
-  &:hover::after {
-    opacity: 1;
-  }
+     &:hover::after {
+          opacity: 1;
+     }
 
-  cursor: pointer;
+     cursor: pointer;
 }
